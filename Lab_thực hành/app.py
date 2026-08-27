@@ -63,14 +63,17 @@ def main():
         if choice == '1':
             s_id = input("Nhập mã SV: ")
             name = input("Nhập tên SV: ")
-            age = int(input("Nhập tuổi: "))
-            gpa = float(input("Nhập điểm GPA: "))
-            add_student(s_id, name, age, gpa)
+            try:
+                age = int(input("Nhập tuổi: "))
+                gpa = float(input("Nhập điểm GPA: "))
+                add_student(s_id, name, age, gpa)
+            except ValueError:
+                print("-> Lỗi: Tuổi phải là số nguyên, GPA phải là số thực!")
         elif choice == '2':
             s_id = input("Nhập mã SV cần xóa: ")
             delete_student(s_id)
         elif choice == '3':
-Lập trình mã nguồn m            view_students()
+            view_students()
         elif choice == '4':
             break
         else:
